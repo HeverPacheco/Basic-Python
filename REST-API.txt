@@ -1,0 +1,117 @@
+GET     https://www.MLB.com
+Accept: application/json
+
+Status Code: 200 (OK)
+Content-type: application/json
+{
+    "Games": [
+    {
+        "id": 5,
+        "name": "Angels vs Dodgers",
+        "venue": "Dodger Stadium",
+        "Seat": "Dugout Club 102"
+        "Price": "$50.19"
+    },
+        {
+        "id": 5,
+        "name": "Padres vs Giants",
+        "venue": "Oracle Park ",
+        "Seat": "LowerBox 106"
+        "Price": "$50.00"
+        
+    }]
+}
+
+POST https://www.MLB.com/Games
+Accept: application/json
+
+Body:{
+[{
+    "name": "Wildcard Series: Padres vs Pirates Game 1",
+    "Date": "October 17 at 6:00PM East Time",
+    "venue": "PNC Park",
+    "Seat": "Dugout 54",
+    "Price": "$175.00"
+},{
+    "name": "Wildcard Series: Yankees vs Angels Game 2",
+    "Date": "October 15 at 8:00PM East Time",
+    "venue": "Angel Stadium of Anaheim",
+    "Seat": "Section 105, Row Z",
+    "Price": "$250.00"
+
+}]
+}
+
+
+Status Code: 201(created)
+Content-type: application/json
+
+
+{[{
+    "id": 5
+    "name": "Wildcard Series: Padres vs Pirates Game 1",
+    "Date": "October 17 at 6:00PM East Time",
+    "venue": "PNC Park",
+    "Seat": "Dugout 54",
+    "Price": "$175.00"
+},{
+    "id": 9
+    "name": "Wildcard Series: Yankees vs Angels Game 2",
+    "Date": "October 15 at 8:00PM East Time",
+    "venue": "Angel Stadium of Anaheim",
+    "Seat": "Section 105, Row Z",
+    "Price": "$250.00"
+
+
+}]
+
+}
+
+PUT https://www.MLB.com/Games/5
+Accept: application/json
+
+Body:{
+    "Price": $215.00
+}
+
+Status Code: 201(created)
+Content-type: application/json
+{
+ "id": 5
+    "name": "Wildcard Series: Padres vs Pirates Game 1",
+    "Date": "October 17 at 6:00PM East Time",
+    "venue": "PNC Park",
+    "Seat": "Dugout 54",
+    "Price": "$215.00"
+}
+
+PUT https://www.MLB.com/Games/9
+Accept: application/json
+
+Body:{
+    "Price": $275.00
+}
+
+Status Code: 201(created)
+Content-type: application/json
+{
+    "id": 9
+    "name": "Wildcard Series: Yankees vs Angels Game 2",
+    "Date": "October 15 at 8:00PM East Time",
+    "venue": "Angel Stadium of Anaheim",
+    "Seat": "Section 105, Row Z",
+    "Price": "$275.00"
+}
+
+DELETE https://www.MLB.com/Games/5
+Accept: application/json
+
+Status Code: 200(OK)
+Content-type: application/json
+
+
+DELETE https://www.MLB.com/Games/9
+Accept: application/json
+
+Status Code: 200(OK)
+Content-type: application/json
